@@ -2,9 +2,9 @@
 
 function download_plugin( $path, $plugin, $plugins_dir )
 {
-	echo passthru( "wget {$plugin['repo']} -P ../" ) . "\n\n";
-	echo passthru( "pwd" ) . "\n\n";
-	echo passthru( "unzip ../{$path}.zip" ) . "\n\n";
+	echo passthru( "wget {$plugin['repo']}" ) . "\n\n";
+	echo passthru( "unzip {$path}.zip" ) . "\n\n";
+	echo passthru( "mv {$path} ../" ) . "\n\n";
 	return TRUE;
 }
 function download_plugins()
