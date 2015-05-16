@@ -3,7 +3,7 @@
 function download_plugin( $path, $plugin, $plugins_dir )
 {
 	echo passthru( "wget {$plugin['repo']}" ) . "\n\n";
-	echo passthru( "unzip {$path}.zip" ) . "\n\n";
+	echo passthru( "unzip {$k}.zip" ) . "\n\n";
 	return TRUE;
 }
 function download_plugins()
@@ -17,7 +17,7 @@ function download_plugins()
 	{
 		if ( ! is_dir( $plugins_dir . $k ) )
 		{
-			if ( download_plugin( $plugins_dir . $k, $dependency, $plugins_dir ) )
+			if ( download_plugin( $k, $dependency, $plugins_dir ) )
 			{
 				echo "Downloaded $k\n";
 			}
