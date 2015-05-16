@@ -12,6 +12,8 @@ function _manually_load_dependencies()
 
 	$dependencies = require __DIR__ . '/dependencies-array.php';
 	foreach ( $dependencies as $k => $dependency ){
+echo $local_plugin_directory .'/' . $k;
+echo WP_PLUGIN_DIR . '/' . $k;
 		if ( is_dir( $local_plugin_directory .'/' . $k ) ) {
 			require $local_plugin_directory .'/' . $dependency['include'];
 			echo "Loaded $k\n";
